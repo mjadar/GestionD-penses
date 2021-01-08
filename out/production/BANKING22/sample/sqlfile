@@ -1,0 +1,79 @@
+-- Java methods to use
+    /*.execute(query); //for sql DDL
+    .executeUpdate(query); //insert update delete
+    .executeQuery(query); //select*/
+
+
+----------- create table SAVINGS ------------------
+create table Savings(
+    pos int,
+    date_j DATE not null PRIMARY key ,
+    dejeuner int,
+    midi int,
+    diner int,
+    courses int,
+    taxi int ,
+    factures int,
+    other int,
+    total int
+);
+
+create table othChamp(
+    pos int primary key ,
+    date_j DATE,
+    description varchar(30),
+    prix int ,
+    FOREIGN KEY (date_j) references Savings(other)
+);
+create login (
+    username varchar(30),
+    password varchar(20)
+);
+
+create table breakpoint(
+    pos int,
+    date_j Date PRIMARY KEY,
+    argent int
+);
+alter table breakpoint add argent int;
+
+------------------------------------------------------------
+
+INSERT INTO JAVA.SAVINGS (POS, DATE_J, DEJEUNER, MIDI, DINER, COURSES, TAXI, FACTURES, OTHER, TOTAL) VALUES (1, TO_DATE('2020-11-27 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 6, 0, 0, 79, 24, 0, 50, 109);
+-- INSERT INTO t(dob) VALUES(TO_DATE('17/12/2015', 'DD/MM/YYYY'));
+
+-------------- Trigger auto-increment ----------------------
+    CREATE OR REPLACE TRIGGER auto_increment_id
+    BEFORE INSERT ON savings
+    FOR EACH ROW
+    declare
+        nbr int;
+
+    BEGIN
+      SELECT count(*) into nbr from Savings;
+      :NEW.pos := nbr+1;
+
+    END;
+       ------
+    CREATE OR REPLACE TRIGGER auto_increment_other
+    BEFORE INSERT ON OTHCHAMP
+    FOR EACH ROW
+    declare
+        nbr int;
+
+    BEGIN
+      SELECT count(*) into nbr from othChamp;
+      :NEW.pos := nbr+1;
+
+    END;
+
+---------------- Trigger Calculate Total ---------------------
+
+    CREATE OR REPLACE TRIGGER calculate_sum
+        BEFORE INSERT on savings
+        for each row
+
+    BEGIN
+        :new.total := :new.dejeuner+:new.midi+:new.diner+:new.courses+:new.taxi+:new.factures+:new.other;
+    END;
+---------------------------------------------------------------

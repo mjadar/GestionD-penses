@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChooseController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <BorderPane prefHeight="398.0" prefWidth="615.0">
+         <top>
+            <VBox prefHeight="72.0" prefWidth="702.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="95.0" prefWidth="615.0" text="WELCOME TO JSAVING" textFill="#a71515">
+                     <font>
+                        <Font name="Book Antiqua" size="36.0" />
+                     </font>
+                  </Label>
+               </children></VBox>
+         </top>
+         <center>
+            <Pane prefHeight="295.0" prefWidth="615.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btn_insert" layoutX="240.0" layoutY="92.0" mnemonicParsing="false" onAction="#SwitchScene" prefHeight="53.0" prefWidth="136.0" text="Insert Data" textFill="#7c0404">
+                     <font>
+                        <Font name="Book Antiqua" size="15.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Button>
+                  <Button fx:id="btn_load" layoutX="240.0" layoutY="156.0" mnemonicParsing="false" onAction="#SwitchScene" prefHeight="50.0" prefWidth="136.0" text="Load Data" textFill="#7c0404">
+                     <font>
+                        <Font name="Book Antiqua" size="15.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Button>
+                  <Button fx:id="btn_update" layoutX="239.0" layoutY="218.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="137.0" text="Update Data" textFill="#7c0404" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Book Antiqua" size="15.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Button>
+                  <Label layoutX="14.0" layoutY="31.0" text="What do you want to do MOHAMED ?">
+                     <font>
+                        <Font name="Book Antiqua" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center></BorderPane>
+   </children>
+</GridPane>

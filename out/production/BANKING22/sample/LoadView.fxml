@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="637.0" prefWidth="1020.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoadController">
+   <children>
+      <TableView fx:id="table" layoutX="166.0" layoutY="74.0" prefHeight="490.0" prefWidth="832.0">
+        <columns>
+          <TableColumn fx:id="pos" prefWidth="44.0" text="Pos" />
+          <TableColumn fx:id="date_j" prefWidth="144.0" text="Date" />
+            <TableColumn fx:id="dejeuner" prefWidth="75.0" text="Déjeuner" />
+            <TableColumn fx:id="midi" prefWidth="67.0" text="Midi" />
+            <TableColumn fx:id="diner" prefWidth="71.0" text="Diné" />
+            <TableColumn fx:id="courses" prefWidth="77.0" text="Courses" />
+            <TableColumn fx:id="taxi" prefWidth="76.0" text="Taxi" />
+            <TableColumn fx:id="factures" prefWidth="85.0" text="Factures" />
+            <TableColumn fx:id="other" prefWidth="84.0" text="Other" />
+            <TableColumn fx:id="total" prefWidth="124.0" text="Total" />
+        </columns>
+      </TableView>
+      <Pane layoutY="150.0" prefHeight="281.0" prefWidth="149.0">
+         <children>
+            <RadioButton fx:id="days30" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" text="30 days">
+               <toggleGroup>
+                  <ToggleGroup fx:id="daysView" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="days14" layoutX="14.0" layoutY="104.0" mnemonicParsing="false" text="14 days" toggleGroup="$daysView" />
+            <RadioButton fx:id="days7" layoutX="14.0" layoutY="62.0" mnemonicParsing="false" text="7 days" toggleGroup="$daysView" />
+            <Button fx:id="btn_upd_view" layoutX="36.0" layoutY="215.0" mnemonicParsing="false" onAction="#UpdateListView" text="Submit" />
+         </children>
+      </Pane>
+      <Button fx:id="btn_accueil" layoutX="627.0" layoutY="583.0" mnemonicParsing="false" onAction="#SwitchSceneL" prefHeight="35.0" prefWidth="78.0" text="Accueil">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+   <children>
+      <BorderPane layoutX="-4.0" prefHeight="405.0" prefWidth="614.0">
+         <top>
+            <Label contentDisplay="CENTER" prefHeight="95.0" prefWidth="449.0" text="WELCOME TO JSAVING" textFill="#7c0404" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="38.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="95.0" layoutY="53.0" prefHeight="32.0" prefWidth="115.0" text="USERNAME  :">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <Label layoutX="102.0" layoutY="132.0" prefHeight="21.0" prefWidth="99.0" text="PASSWORD : ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <TextField fx:id="txt_username" layoutX="227.0" layoutY="59.0" prefHeight="32.0" prefWidth="182.0" />
+                  <PasswordField fx:id="txt_password" layoutX="226.0" layoutY="127.0" onAction="#checkLogin" prefHeight="30.0" prefWidth="184.0" />
+                  <Button fx:id="btn_signin" layoutX="275.0" layoutY="179.0" mnemonicParsing="false" onAction="#checkLogin" prefHeight="37.0" prefWidth="84.0" text="SIGN IN" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
